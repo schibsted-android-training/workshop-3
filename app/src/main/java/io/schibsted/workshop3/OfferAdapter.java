@@ -31,7 +31,10 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        Offer offer = offers.get(position);
+        holder.titleTV.setText(offer.getTitle());
+        holder.companyNameTV.setText(offer.getCompanyName());
+        holder.cityTV.setText(offer.getCity());
     }
 
     @Override
