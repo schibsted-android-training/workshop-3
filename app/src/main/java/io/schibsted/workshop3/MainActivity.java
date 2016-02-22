@@ -10,6 +10,8 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.recyclerview.animators.ScaleInBottomAnimator;
+
 public class MainActivity extends AppCompatActivity {
 
     private static List<Offer> offers = new ArrayList<>();
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
+
+        RecyclerView.ItemAnimator itemAnimator = new ScaleInBottomAnimator();
+        rv.setItemAnimator(itemAnimator);
 
         Button button = ((Button) findViewById(R.id.btn_add_offer));
         button.setOnClickListener(new View.OnClickListener() {
