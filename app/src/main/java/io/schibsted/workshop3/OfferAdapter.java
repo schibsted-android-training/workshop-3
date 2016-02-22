@@ -5,10 +5,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by roger.martinez on 22/2/16.
  */
 public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> {
+
+    private List<Offer> offers;
+
+    public OfferAdapter(List<Offer> offers) {
+        this.offers = offers;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return null;
@@ -28,6 +37,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> 
         TextView titleTV;
         TextView companyNameTV;
         TextView cityTV;
+
         public ViewHolder(View itemView) {
             super(itemView);
             titleTV = ((TextView) itemView.findViewById(R.id.tv_title));
